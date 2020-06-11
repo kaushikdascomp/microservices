@@ -1,0 +1,37 @@
+schema {
+    query: EmployeeQueries
+    mutation: EmployeeMutations
+
+}
+type EmployeeQueries {
+    employees: [Employee]
+    employee(id: String!): Employee!
+    employeesByOrganization(organizationId: String!): [Employee]
+    employeesByDepartment(departmentId: String!): [Employee]
+}
+
+type EmployeeMutations {
+    newEmployee(employee: EmployeeInput!): Employee
+    deleteEmployee(id: String!) : Employee
+    updateEmployee(id: String!, employee: EmployeeInput!): Employee
+}
+
+
+input EmployeeInput {
+    organizationId: String
+    departmentId: String
+    name: String
+    age: Int
+    position: String
+    salary: Int
+}
+type Employee {
+    id: String!
+    organizationId: String!
+    departmentId: String!
+    name: String!
+    age: Int!
+    position: String!
+    salary: Int!
+}
+

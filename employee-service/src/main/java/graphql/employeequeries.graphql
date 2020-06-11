@@ -1,0 +1,20 @@
+query EmployeesByOrganization($organizationId: String!) {
+    employeesByOrganization(organizationId: $organizationId) {
+        id
+        name
+    }
+}
+query EmployeesByDepartment($departmentId: String!) {
+    employeesByDepartment(departmentId: $departmentId) {
+        id
+        name
+    }
+}
+query EmployeesByDepartment($departmentId: String!) {
+    employeesByDepartment(departmentId: $departmentId) {
+        id
+        name
+        position
+        salary
+    }
+}
