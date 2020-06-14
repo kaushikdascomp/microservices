@@ -2,6 +2,7 @@ package departmentservice.model;
 
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
+import reactor.core.publisher.Flux;
 
 import java.util.List;
 

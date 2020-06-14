@@ -12,43 +12,10 @@
     <artifactId>employee-service</artifactId>
 
     <dependencies>
-    <dependency>
-        <groupId>org.springframework.cloud</groupId>
-        <artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>
-    </dependency>
-    <dependency>
-        <groupId>org.springframework.boot</groupId>
-        <artifactId>spring-boot-starter-web</artifactId>
-    </dependency>
-    <dependency>
-        <groupId>org.springframework.boot</groupId>
-        <artifactId>spring-boot-starter-actuator</artifactId>
-    </dependency>
-    <dependency>
-        <groupId>com.graphql-java</groupId>
-        <artifactId>graphql-spring-boot-starter</artifactId>
-        <version>5.0.2</version>
-    </dependency>
-    <dependency>
-        <groupId>com.graphql-java</groupId>
-        <artifactId>graphiql-spring-boot-starter</artifactId>
-        <version>5.0.2</version>
-    </dependency>
-    <dependency>
-        <groupId>com.graphql-java</groupId>
-        <artifactId>voyager-spring-boot-starter</artifactId>
-        <version>5.0.2</version>
-    </dependency>
-    <dependency>
-        <groupId>com.graphql-java</groupId>
-        <artifactId>graphql-java</artifactId>
-        <version>9.2</version>
-    </dependency>
-    <dependency>
-        <groupId>com.graphql-java</groupId>
-        <artifactId>graphql-java-tools</artifactId>
-        <version>5.2.3</version>
-    </dependency>
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>
+        </dependency>
 
         <dependency>
             <groupId>com.apollographql.apollo</groupId>
@@ -56,16 +23,15 @@
             <version>1.0.0-alpha5</version>
         </dependency>
 
-    <dependency>
-        <groupId>org.springframework.boot</groupId>
-        <artifactId>spring-boot-starter-test</artifactId>
-    </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-test</artifactId>
+        </dependency>
         <dependency>
             <groupId>net.sf.jasperreports</groupId>
             <artifactId>jasperreports</artifactId>
             <version>6.9.0</version>
         </dependency>
-
     </dependencies>
 
     <build>
@@ -76,7 +42,6 @@
             </plugin>
         </plugins>
     </build>
-
 
 
 </project>

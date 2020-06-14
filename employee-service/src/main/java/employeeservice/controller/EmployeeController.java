@@ -2,7 +2,7 @@ package employeeservice.controller;
 
 import employeeservice.model.Employee;
 import employeeservice.query.EmployeeInformationQuery;
-import employeeservice.service.ReposrtService;
+import employeeservice.service.ReportService;
 import net.sf.jasperreports.engine.JRException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -21,16 +21,23 @@ public class EmployeeController {
     EmployeeInformationQuery employeeInformationQuery;
 
     @Autowired
-    ReposrtService reposrtService;
+    ReportService reportService;
 
     @GetMapping("/getEmployees")
     public List<Employee> getEmployees(){
         return employeeInformationQuery.getAllEmployees();
     }
 
+    @GetMapping("/bydepartment/{departmentId}")
+    public List<Employee> getEmployeesbyDepartmentId(@PathVariable String departmentId){
+        return employeeInformationQuery.getAllEmployeesByDept(departmentId);
+    }
+
     @GetMapping("/report/{format}")
     public String generateReport(@PathVariable String format) throws FileNotFoundException, JRException {
-        return reposrtService.exportReport(format);
+        return reportService.exportReport(format);
     }
+
+
 
 }

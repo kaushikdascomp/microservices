@@ -39,7 +39,7 @@ public class DepartmentSeeder implements CommandLineRunner {
         List<Employee> employeeListByDepartmentId = mongoTemplate.find(query, Employee.class);
         System.out.println("Employee List:  "+employeeListByDepartmentId);
 
-        department.setEmployeeList(employeeListByDepartmentId);
+        //department.setEmployeeList(employeeListByDepartmentId);
 
         Department department2 = new Department();
         department2.setDeptId("2");
@@ -50,7 +50,7 @@ public class DepartmentSeeder implements CommandLineRunner {
         List<Employee> employeeListByDepartmentId2 = mongoTemplate.find(query1, Employee.class);
         System.out.println("Employee List:  "+employeeListByDepartmentId2);
 
-        department2.setEmployeeList(employeeListByDepartmentId2);
+        //department2.setEmployeeList(employeeListByDepartmentId2);
 
         List<Department> departments = Arrays.asList(department, department2);
         mongoTemplate.insertAll(departments);

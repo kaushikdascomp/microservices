@@ -6,6 +6,7 @@ type DepartmentQueries {
     departments: [Department]
     department(id: String!): Department!
     departmentsByOrganization(organizationId: String!): [Department]
+    departmentsByOrganizationWithEmployees(organizationId: String!): [Department]
 }
 
 type DepartmentMutations {

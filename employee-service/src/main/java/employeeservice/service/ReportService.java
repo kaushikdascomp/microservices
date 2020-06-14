@@ -15,7 +15,7 @@ import java.util.List;
 import java.util.Map;
 
 @Service
-public class ReposrtService {
+public class ReportService {
 
     @Autowired
     EmployeeInformationQuery employeeInformationQuery;
