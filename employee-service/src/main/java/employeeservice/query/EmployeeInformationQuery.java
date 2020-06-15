@@ -2,6 +2,8 @@ package employeeservice.query;
 
 
 import employeeservice.model.Employee;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.data.mongodb.core.MongoTemplate;
 import org.springframework.data.mongodb.core.query.Criteria;
@@ -12,6 +14,8 @@ import java.util.List;
 
 @Repository
 public class EmployeeInformationQuery implements CommandLineRunner {
+
+    private static final Logger log = LoggerFactory.getLogger(EmployeeInformationQuery.class);
 
     private MongoTemplate mongoTemplate;
 
@@ -37,7 +41,7 @@ public class EmployeeInformationQuery implements CommandLineRunner {
         Query query = Query.query(Criteria.where("departmentId").is(departmentId));
         List<Employee> employeesByDept = mongoTemplate.find(query, Employee.class);
         employeesByDept.stream().forEach(System.out::println);
-
+        log.info("Provide Data from Mongo:: ");
         return employeesByDept;
     }
 

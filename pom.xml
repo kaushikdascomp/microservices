@@ -39,6 +39,15 @@
             <artifactId>spring-boot-starter-webflux</artifactId>
         </dependency>
 
+        <!--Spring boot Actuator for Monitoring and Management -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-actuator</artifactId>
+            <version>2.3.0.RELEASE</version>
+        </dependency>
+
+
+
         <!-- JaxB dependency specially for Java 11  -->
         <dependency>
             <groupId>javax.xml.bind</groupId>
@@ -93,6 +102,15 @@
             <artifactId>graphql-java-tools</artifactId>
             <version>5.2.3</version>
         </dependency>
+
+        <!-- Spring Cloud Starter Sleuth-->
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-sleuth-zipkin</artifactId>
+            <version>2.2.2.RELEASE</version>
+        </dependency>
+
+        <!-- Test frameworks dependancy -->
 
         <dependency>
             <groupId>org.springframework.boot</groupId>
