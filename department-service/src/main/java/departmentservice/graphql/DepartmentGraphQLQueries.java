@@ -2,10 +2,8 @@ package departmentservice.graphql;
 
 
 import com.coxautodev.graphql.tools.GraphQLQueryResolver;
-
 import departmentservice.async.AsyncClient;
 import departmentservice.model.Department;
-import departmentservice.model.Employee;
 import departmentservice.query.DepartmentInformationQuery;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -13,8 +11,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 
 @Component
@@ -44,16 +40,12 @@ public class DepartmentGraphQLQueries implements GraphQLQueryResolver {
 
     public List<Department> departmentsByOrganizationWithEmployees(String organizationId) throws IOException {
         List<Department> departments = departmentInformationQuery.getAllDepartmentsByOrganizationId(organizationId);
-        List<Employee> employeeList = new ArrayList<>();
         departments.stream().forEach(e->{
            try{
-                e.setEmployeeList(Arrays.asList(asyncClient.findByDepartment(e.getDeptId())));
-               //asyncClient.findByDepartment(e.getDeptId()).subscribe(l->employeeList.add(l));
-              // e.setEmployeeList(employeeList);
+                e.setEmployeeList((asyncClient.findByDepartment(e.getDeptId())));
             } catch (InterruptedException ex){
                 log.error("Error while calling employee service:: ",ex);
             }
-
         });
 
         return departments;

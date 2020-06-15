@@ -7,10 +7,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-import reactor.core.publisher.Flux;
-import reactor.core.publisher.Mono;
 
-import java.util.Arrays;
 import java.util.List;
 
 @RestController
@@ -22,7 +19,7 @@ public class DepartmentController {
 
     @GetMapping("/getEmployeesByDepartment/{departmentId}")
     public List<Employee> getEmployeesByDepartment(@PathVariable String departmentId) throws Exception{
-        return Arrays.asList(asyncClient.findByDepartment(departmentId));
+        return asyncClient.findByDepartment(departmentId);
     }
 
 }
